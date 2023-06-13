@@ -1,11 +1,6 @@
 # SANSAR 
 
-
-
 ## CONTENT TABLE
-
-<SUB> `TO RETURN. USE : `   [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
-
 
 - 1.- [INTRODUCTION](#INTRODUCTION) 
 	- 1.1.- [WHAT IS SANSAR](#WHAT-IS-SANSAR)
@@ -25,6 +20,8 @@
 
 # INTRODUCTION
 
+> If you're interested in creating interactive experiences in Sansar, scripting is an essential skill to learn. Scripts allow us to make interactive and reactive content in Sansar. They are written in C# and are designed to be easy to use, even for beginners. Whether you're looking to create a simple interactive object or a complex game, scripting is the key to unlocking the full potential of Sansar. In this guide, we'll cover the basics of scripting in Sansar, including how to use the Script API, how to create triggers, and how to test and refine your scripts. By the end of this guide, you'll have the knowledge and skills you need to start creating your own custom behaviors and interactive experiences in Sansar.
+
 
  [` ▲ BACK TO TOP` ](#SANSAR)
 
@@ -38,7 +35,7 @@ Sansar is a 3D virtual world platform developed by Linden Lab, the same company 
 
 ## WHY PROGRAMMING IN CSHARP LANGUAGE
 
-<p style="text-align: justify;"> Sansar uses `C#` as a programming language to create scripts that control the behavior of objects in the virtual world. C# is a modern, secure, object-oriented programming language developed by Microsoft. C# is a high-level language used in the development of Windows apps, web apps, games, mobile apps, and more. C# is easy to learn and powerful, offering a wide variety of built-in data types, as well as the ability to create custom data types. C# is also compatible with Microsoft's .NET platform, allowing developers to build applications that run on a wide variety of devices and operating systems. In short, Sansar uses C# as its programming language because of its ease of use, its security, and its ability to create high-quality and scalable applications. </p>
+<p style="text-align: justify;"> Sansar uses `C#`  as a programming language to create scripts that control the behavior of objects in the virtual world. C# is a modern, secure, object-oriented programming language (OOP) developed by Microsoft. C# is a high-level language used in the development of Windows apps, web apps, games, mobile apps, and more. C# is easy to learn and powerful, offering a wide variety of built-in data types, as well as the ability to create custom data types. C# is also compatible with Microsoft's .NET platform, allowing developers to build applications that run on a wide variety of devices and operating systems. In short, Sansar uses C# as its programming language because of its ease of use, its security, and its ability to create high-quality and scalable applications. </p>
 
 > The `File` where you write your script should have the extension  `.cs` , this means that is a C# file and can be import to sansar:   `MySansarScript.cs`
 
@@ -85,14 +82,18 @@ In short, the basics of programming in Sansar include variables, functions, even
 using Sansar;
 using Sansar.Script;
 
-//Others  namespaces  less usual are:
+//Others  namespaces  are:
 
 using Sansar.Testing;
 using Sansar.Utility;
 
+using System.Collections.Generic;
+using System;
+
+
 ```
 
-- Sansar library include:
+- `Sansar library include:`
 
 |Sansar||
 |-|-|
@@ -101,7 +102,7 @@ using Sansar.Utility;
 |`Quaternion`|This is a type that is used for working with rotations. It represents a rotation in 3D space as a four-component vector. It includes methods for creating, modifying, and applying rotations|
 |`Vector`|This is a type that is used for working with vectors. It represents a vector in 3D space as a three-component vector. It includes methods for creating, modifying, and performing operations on vectors, such as dot product and cross product|
 
-- Sansar.Script library include:
+- `Sansar.Script library include:`
 
 |Sansar.Script||
 |-|-|
@@ -112,7 +113,7 @@ using Sansar.Utility;
 |`ICoroutine `|State-machine-style functions that can be suspended, resumed, and executed cooperatively by yielding|
 |`Timer `|Time for an event or events.|
 
-- Sansar.Simulation library include:
+- `Sansar.Simulation library include:`
 
 |Sansar.Simulation||
 |-|-|
@@ -123,11 +124,16 @@ using Sansar.Utility;
 |`ObjectPrivate.Mover`|Used to store a position or direction in three-dimensional space|
 |`ScenePrivate`|Used to store an orientation in three-dimensional space.|
 |`ScenePrivate.Chat`|This component allows scripts to send chat messages to the chat window in the Sansar client.|
-|`SceneObjectScript`|This class is the base class for all scripts that are attached to objects in the scene. It provides access to the object that the script is attached to, as well as other components that are attached to the object.|
 |`AnimationComponent`|This component allows scripts to control animations on objects in the scene. It provides methods for playing, stopping, and pausing animations.|
 |`AudioComponent`|This component allows scripts to play sounds and music in the scene. It provides methods for playing, stopping, and pausing audio.|
 |`LightComponent`|This component allows scripts to control lights in the scene. It provides methods for turning lights on and off, changing their color and intensity, and setting their position and rotation.|
 |`RigidBodyComponent`|This component allows scripts to control the physics of objects in the scene. It provides methods for applying forces and torques to objects, as well as setting their mass and friction.|
+
+Here are included one more important that is: 
+
+### SceneObjectScript
+
+This class is the base class for all scripts that are attached to objects in the scene. It provides access to the object that the script is attached to, as well as other components that are attached to the object.
 
 <SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
 
@@ -145,7 +151,7 @@ Overall, the `AgentPrivate` and `AgentPublic` classes are used to interact with 
 
 ### CLASSES
 
-The next part that we can see are the `Classes` where we can have more than one class where extend SceneObjectScript to create a script that can be used on content that is natively in the scene. This is the primary script type in Sansar.
+The next part that we can see are the `Classes` where we can have more than one class where extend [SceneObjectScript](#SceneObjectScript) to create a script that can be used on content that is natively in the scene. This is the primary script type in Sansar.
 
 ```csharp
 public class ClassNumber1 : SceneObjectScript
@@ -198,7 +204,7 @@ public class Variables : SceneObjectScript
 
 ### EDITOR PROPERTIES
 
-> For the variables we have some properties that we can use to show in the editor, this properties work with the public variable mostly because we change the publics in the editor:
+> For the variables we have some `parameters` that we can use to show in the editor, this properties work with the public variable mostly because we change the publics in the editor:
 
 |Variable Properties||
 |-|-|
