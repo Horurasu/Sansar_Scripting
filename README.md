@@ -129,7 +129,7 @@ using System;
 |`LightComponent`|This component allows scripts to control lights in the scene. It provides methods for turning lights on and off, changing their color and intensity, and setting their position and rotation.|
 |`RigidBodyComponent`|This component allows scripts to control the physics of objects in the scene. It provides methods for applying forces and torques to objects, as well as setting their mass and friction.|
 
-Here are included one more important that is: 
+Here is included one more important: 
 
 ### SceneObjectScript
 
