@@ -79,10 +79,14 @@ In short, the basics of programming in Sansar include variables, functions, even
 > The first part of the structure of the code is the references to the libraries that the script need to work that are the following (because if we don´t have one of them in the script, at the compiling moment can not identify some functions or similar):
 
 ```csharp
+//The more common are:
+
 using Sansar;
 using Sansar.Script;
+using Sansar.Simulation;
 
-//Others  namespaces  are:
+
+//There are others namespaces, some of them are:
 
 using Sansar.Testing;
 using Sansar.Utility;
@@ -282,6 +286,13 @@ public class CodeStructure : SceneObjectScript
 ## IMPORT
 
 When we have a script for sansar in `.cs` we already can import it to the scene, at the top we have the window `Scene` where we have options like:
+
+<img
+  src="/Sansar_Scripting/Images/ImagensGithubMenuOptionImport.png"
+  alt="Alt text"
+  title="Optional title"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  
 
 - ABOUT THIS SCENE - TOOLS - `IMPORT` - VISIBILITY - OPTIONS - CAMERAS
 
