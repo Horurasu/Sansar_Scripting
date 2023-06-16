@@ -288,7 +288,7 @@ public class CodeStructure : SceneObjectScript
 When we have a script for sansar in `.cs` we already can import it to the scene, at the top we have the window `Scene` where we have options like:
 
 <img
-  src="/Images/GithubMenuOptionImport.png"
+  src="/Images/Imagens/GithubMenuOptionImport.png"
   alt="image"
   title="Import"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
@@ -299,7 +299,7 @@ The option that we need is `import` , this option will show a windows name as `I
 > We can import files with the extension `.CS` and `.JSON`
 
 <img
-  src="/Images/ImagensGithubImportWindows.png"
+  src="/Images/Imagens/GithubImportWindows.png"
   alt="image"
   title="Import window"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
