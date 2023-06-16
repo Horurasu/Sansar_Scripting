@@ -288,7 +288,7 @@ public class CodeStructure : SceneObjectScript
 When we have a script for sansar in `.cs` we already can import it to the scene, at the top we have the window `Scene` where we have options like:
 
 <img
-  src="/Sansar_Scripting/Images/ImagensGithubMenuOptionImport.png"
+  src="/Images/ImagensGithubMenuOptionImport.png"
   alt="Alt text"
   title="Optional title"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
