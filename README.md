@@ -15,7 +15,18 @@
 	    - 2.2.1- [EDITOR PROPERTIES](#EDITOR-PROPERTIES)
 	    - 2.2.1- [METHODS](#METHODS)
 	    - 2.2.1- [SCRIPT STRUCTURE](#SCRIPT-STRUCTURE)
+- 3.- [START TO PROGRAMMING](#START-TO-PROGRAMMING)|
 
+
+
+### OTHER LINKS
+
+||Links|
+|-|-|
+|Sansar script guide|[EvoAv/ScriptGuide](https://github.com/darwinrecreant/sansar-scripting-guide)|
+|Sansar script guide|[MojoD/ScriptGuide](https://github.com/mojoD/sansar-script)|
+
+<em>*The references guides is not our authorship</em>
 
 
 # INTRODUCTION
@@ -266,45 +277,109 @@ public class CodeStructure : SceneObjectScript
 
 }
 ````
+
+
 <SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
 
+# START TO PROGRAMMING 
 
+To start we can see something before to start, when sansar is installed we can find in the documents some examples that we can use to see how some functions work, we can find them in (only  if we have sansar installed in the default route): 
 
+> `C:\Program Files\Sansar\Client\ScriptApi\Examples`
 
+You can make a copy of the `Folder`to create our WorkSpace where we will make our scripts.
 
-
-
-
-
-
-
-
-
-
-
+<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
 
 ## IMPORT
+
+> The first STEP is create and enter in a world
+
+In Sansar we have in the left a menu, where have several options, here we have a `Magical Wand` that say `Create`
+
+<img
+  src="/Images/ImagensGithubMenu.png"
+  alt="image"
+  title="Menu"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+That shows a window named  `My Worlds`
+
+<img
+  src="/Images/ImagensGithubWorldCreation.png"
+  alt="image"
+  title="MenuWorldCreation"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+If you already have worlds or is the first one, you can click in the `Pencil` that show a message `Edit Scene` to enter at the world
+
+<img
+  src="/Images/ImagensGithubEditScene.png"
+  alt="image"
+  title="EditScene"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
 
 When we have a script for sansar in `.cs` we already can import it to the scene, at the top we have the window `Scene` where we have options like:
 
 <img
   src="/Images/ImagensGithubMenuOptionImport.png"
   alt="image"
-  title="Import"
+  title="MenuImport"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
 
-The option that we need is `import` , this option will show a windows name as `Import Script` where we can choose the script from the docs and we can give it a name for the inventory
+The option that we need is `import` , this option will show a window name as `Import Script` where we can choose the script from the docs and we can give it a name for the inventory
 
 > We can import files with the extension `.CS` and `.JSON`
 
 <img
   src="/Images/ImagensGithubImportWindows.png"
   alt="image"
-  title="Import window"
+  title="ImportWindow"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
+`Choose file` This window let us select the script from our PC.
+
+`Log`  This windows show us if the code have some problem when is compiled
+
+If the `Code` does not present any problem this will be added to the `Inventory Panel`
+
+<img
+  src="/Images/ImagensGithubInventory.png"
+  alt="image"
+  title="InventoryWindows"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+
+
+## ADD A SCRIPT TO AN OBJECT
+
+When we are in the editor of sansar, we have different forms to add a script to an object
+
+<img
+  src="/Images/AddScript.png"
+  alt="image"
+  title="Scripts"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+> `CASE A`  in this case we can use the click right to show a menu that have a part called  `Add` this part let us to  to add different functions and things to the object, we also can add a `Script` in this part
+
+> `CASE B` in this case we can take the script from the inventory to put it in the object 
+
+> `CASE C` in this case is a little different because, this work when we already have a script in the object, in the panel of Properties we can change the script that we already have to change it for another one
+
+> `CASE D` in this case we  can add a script from the `Scene Objects`  panel 
+
+
+<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+
+
 ## FUNCTION LOG 
+
+### DEBUGGER
+
+Inside of sansar we have the function `Log` this can let us make a debugger to find the error when the script is working, most of the script does not have this part but could be really useful to find the functions or part that is not working correctly
 
 We can use the function `Log.Write()` to show information, messages, errors in the console to corroborate that work correctly. we can see it in the next example
 
@@ -357,18 +432,5 @@ public class LogMessage : SceneObjectScript
 
 
 
-
-
-
-
-
-
-# OTHER LINKS
-
-||Links|
-|-|-|
-|Sansar script guide|[EvoAv/ScriptGuide](https://github.com/darwinrecreant/sansar-scripting-guide)|
-
-<em>*The references guides is not our authorship</em>
 
 
