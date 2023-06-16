@@ -288,17 +288,21 @@ public class CodeStructure : SceneObjectScript
 When we have a script for sansar in `.cs` we already can import it to the scene, at the top we have the window `Scene` where we have options like:
 
 <img
-  src="/Images/ImagensGithubMenuOptionImport.png"
-  alt="Alt text"
-  title="Optional title"
+  src="/Images/GithubMenuOptionImport.png"
+  alt="image"
+  title="Import"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
-
-- ABOUT THIS SCENE - TOOLS - `IMPORT` - VISIBILITY - OPTIONS - CAMERAS
 
 The option that we need is `import` , this option will show a windows name as `Import Script` where we can choose the script from the docs and we can give it a name for the inventory
 
 > We can import files with the extension `.CS` and `.JSON`
+
+<img
+  src="/Images/ImagensGithubImportWindows.png"
+  alt="image"
+  title="Import window"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 ## FUNCTION LOG 
 
