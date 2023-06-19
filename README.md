@@ -1,3 +1,9 @@
+<img
+  src="/Images/SANSARLOGO.png"
+  alt="image"
+  title="Menu"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
 # SANSAR 
 
 ## CONTENT TABLE
@@ -5,17 +11,24 @@
 - 1.- [INTRODUCTION](#INTRODUCTION) 
 	- 1.1.- [WHAT IS SANSAR](#WHAT-IS-SANSAR)
 	- 1.2.- [WHY PROGRAMMING IN C# LANGUAGE](#WHY-PROGRAMMING-IN-CSHARP-LANGUAGE)
-- 2.- [INTRODUCTION TO PROGRAMMING](#INTRODUCTION-TO-SANSAR-PROGRAMMING)|
+- 2.- [INTRODUCTION TO PROGRAMMING](#INTRODUCTION-TO-SANSAR-PROGRAMMING)
 	- 2.1.- [VISUAL STUDIO CODE CONFIGURATION](#VISUAL-STUDIO-CODE-CONFIG)
 	- 2.2.- [BASIC CONCEPTS](#BASIC-CONCEPTS)
 	    - 2.2.1- [SANSAR NAMESPACES OR LIBRARIES](#SANSAR-NAMESPACES-OR-LIBRARIES)
-	    - 2.2.1- [AGENTPRIVATE AND AGENTPUBLIC](#AGENTPRIVATE-AND-AGENTPUBLIC)
-	    - 2.2.1- [CLASSES](#CLASSES)
-	    - 2.2.1- [VARIABLES](#VARIABLES)
-	    - 2.2.1- [EDITOR PROPERTIES](#EDITOR-PROPERTIES)
-	    - 2.2.1- [METHODS](#METHODS)
-	    - 2.2.1- [SCRIPT STRUCTURE](#SCRIPT-STRUCTURE)
-- 3.- [START TO PROGRAMMING](#START-TO-PROGRAMMING)|
+	    - 2.2.2- [AGENTPRIVATE AND AGENTPUBLIC](#AGENTPRIVATE-AND-AGENTPUBLIC)
+	    - 2.2.3- [CLASSES](#CLASSES)
+	    - 2.2.4- [VARIABLES](#VARIABLES)
+	    - 2.2.5- [EDITOR PROPERTIES](#EDITOR-PROPERTIES)
+	    - 2.2.6- [METHODS](#METHODS)
+	    - 2.2.7- [SCRIPT STRUCTURE](#SCRIPT-STRUCTURE)
+- 3.- [START TO PROGRAMMING](#START-TO-PROGRAMMING)
+	- 3.1.- [IMPORT](#IMPORT)
+  - 3.2.- [ADD A SCRIPT TO AN OBJECT](#ADD-A-SCRIPT-TO-AN-OBJECT)
+  - 3.3.- [FUNCTION LOG](#FUNCTION-LOG )
+  	  - 3.3.1- [CREATE A DEBUGGER](#CREATE-A-DEBUGGER)
+
+
+
 
 
 
@@ -248,7 +261,7 @@ public class Variables : SceneObjectScript
 public override void Init()
 {
     
-}
+}CREATE A DEBUGGER
 ````
 
 <SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
@@ -377,7 +390,7 @@ When we are in the editor of sansar, we have different forms to add a script to 
 
 ## FUNCTION LOG 
 
-### DEBUGGER
+### CREATE A DEBUGGER
 
 Inside of sansar we have the function `Log` this can let us make a debugger to find the error when the script is working, most of the script does not have this part but could be really useful to find the functions or part that is not working correctly
 
@@ -426,6 +439,8 @@ public class LogMessage : SceneObjectScript
     }
 }
 ````
+
+
 
 <SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
 
