@@ -3,8 +3,8 @@
   alt="image"
   title="Menu"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
-
-# SANSAR 
+  
+<h1 align="center"> SANSAR GUIDE  </h1> 
 
 ## CONTENT TABLE
 
@@ -24,8 +24,11 @@
 - 3.- [START TO PROGRAMMING](#START-TO-PROGRAMMING)
 	- 3.1.- [IMPORT](#IMPORT)
   - 3.2.- [ADD A SCRIPT TO AN OBJECT](#ADD-A-SCRIPT-TO-AN-OBJECT)
-  - 3.3.- [FUNCTION LOG](#FUNCTION-LOG )
+  - 3.3.- [FUNCTION LOG](#FUNCTION-LOG)
   	  - 3.3.1- [CREATE A DEBUGGER](#CREATE-A-DEBUGGER)
+  - 3.4.- [MY INTERACTION PROPERTY](#MY-INTERACTION)
+  - 3.5.- [TAG NAME](#TAG-NAME)
+
 
 
 
@@ -47,7 +50,7 @@
 > If you're interested in creating interactive experiences in Sansar, scripting is an essential skill to learn. Scripts allow us to make interactive and reactive content in Sansar. They are written in C# and are designed to be easy to use, even for beginners. Whether you're looking to create a simple interactive object or a complex game, scripting is the key to unlocking the full potential of Sansar. In this guide, we'll cover the basics of scripting in Sansar, including how to use the Script API, how to create triggers, and how to test and refine your scripts. By the end of this guide, you'll have the knowledge and skills you need to start creating your own custom behaviors and interactive experiences in Sansar.
 
 
- [` ▲ BACK TO TOP` ](#SANSAR)
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ## WHAT IS SANSAR
 
@@ -55,7 +58,7 @@ Sansar is a 3D virtual world platform developed by Linden Lab, the same company 
 
 > <p style="text-align: justify;">The platform allows users to create and explore virtual worlds, interact with other users, and participate in live events. Sansar describes itself as a social virtual reality platform, where users can create their own avatars and customize their experience in the virtual world. The platform supports virtual reality headsets such as the Oculus Rift and HTC Vive, as well as desktop browsing. Sansar also offers content creation tools so users can design and build their own virtual worlds. The platform launched in 2017 and has been described as the "heir" to Second Life.</p>
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ## WHY PROGRAMMING IN CSHARP LANGUAGE
 
@@ -65,7 +68,7 @@ Sansar is a 3D virtual world platform developed by Linden Lab, the same company 
 
 If you already have a Script for Sansar you can jump to the [import](#IMPORT) part to upload you script to sansar.
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 # INTRODUCTION TO SANSAR PROGRAMMING 
 
@@ -79,7 +82,7 @@ The IDE that work better to write scripts for Sansar is VsCode to write script w
     
 <em>*The references guides is not our authorship</em>
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ## BASIC CONCEPTS
 
@@ -95,7 +98,7 @@ The basics of programming in Sansar are similar to those of any other programmin
 
 In short, the basics of programming in Sansar include variables, functions, events, and control structures. These concepts are fundamental to the creation of Sansar scripts that control the behavior of objects in the virtual world.
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 
 ### SANSAR NAMESPACES OR LIBRARIES
@@ -163,19 +166,19 @@ Here is included one more important:
 
 This class is the base class for all scripts that are attached to objects in the scene. It provides access to the object that the script is attached to, as well as other components that are attached to the object.
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ### AGENTPRIVATE AND AGENTPUBLIC
 
 > In Sansar scripting, there are two classes for interacting with avatars in the scene: `AgentPrivate` and `AgentPublic`. Here are the differences and uses of each:
 
-- `AgentPrivate`: This is the main class for interacting with avatars visiting your scene. It provides access to the avatar's position, hand positions, and other information. It can also be used to play sounds, send direct messages, and handle input. The AgentInfo struct includes the unique AvatarUuid to identify a player. The `AgentPrivate` class is used for interactions that should only be visible to the avatar performing the action, such as playing a sound effect when the avatar presses a button.
+- `AgentPrivate`: This is the main class for interacting with avatars visiting your scene. It provides access to the avatar's position, hand positions, and other information. It can also be used to play sounds, send direct messages, and handle input. The AgentInfo structure includes the unique AvatarUuid to identify a player. The `AgentPrivate` class is used for interactions that should only be visible to the avatar performing the action, such as playing a sound effect when the avatar presses a button.
 
 - `AgentPublic`: This class is used for interactions that should be visible to all avatars in the scene. It provides access to the avatar's position, but not to their hand positions or other private information. It can be used to broadcast messages, play sounds, and handle input. The `AgentPublic` class is used for interactions that should be visible to all avatars in the scene, such as playing music that all avatars can hear.
 
 Overall, the `AgentPrivate` and `AgentPublic` classes are used to interact with avatars in different ways depending on the desired visibility of the interaction. If you want to learn more about Sansar scripting, you can check out the resources in
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ### CLASSES
 
@@ -193,7 +196,7 @@ public class ClassNumber2 : SceneObjectScript
 
 }
 ```
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ### VARIABLES
 
@@ -228,7 +231,7 @@ public class Variables : SceneObjectScript
 }
 ````
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ### EDITOR PROPERTIES
 
@@ -251,7 +254,7 @@ public class Variables : SceneObjectScript
 
   [Range(-2.0f, 2.0f)]
 ````
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ### METHODS
 
@@ -264,7 +267,7 @@ public override void Init()
 }CREATE A DEBUGGER
 ````
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ### SCRIPT STRUCTURE
 
@@ -292,7 +295,7 @@ public class CodeStructure : SceneObjectScript
 ````
 
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 # START TO PROGRAMMING 
 
@@ -302,7 +305,7 @@ To start we can see something before to start, when sansar is installed we can f
 
 You can make a copy of the `Folder`to create our WorkSpace where we will make our scripts.
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ## IMPORT
 
@@ -363,7 +366,7 @@ If the `Code` does not present any problem this will be added to the `Inventory 
   alt="image"
   title="InventoryWindows"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 
 ## ADD A SCRIPT TO AN OBJECT
@@ -385,7 +388,7 @@ When we are in the editor of sansar, we have different forms to add a script to 
 > `CASE D` in this case we  can add a script from the `Scene Objects`  panel 
 
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 
 ## FUNCTION LOG 
@@ -442,10 +445,81 @@ public class LogMessage : SceneObjectScript
 
 
 
-<SUB> [` ▲ BACK TO TOP` ](#SANSAR) </SUB>
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+
+## TAG NAME
+If we want have a type of `Tag` in sansar we can use the property `Interaction`
+
+````csharp
+//necessary namespaces for the script to work
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+
+//principal class 
+public class TagName : SceneObjectScript
+{   
+    //public fields show in the object properties after being added to a script.
+    #region Editor Properties 
+
+        [DefaultValue("Name Object")] //here you can write whatever you want that will show in Sansar
+        public Interaction TagName;
+
+    #endregion
+
+    //Method called when the script is initialized
+    public override void Init()
+    {
+        
+    }
+}
+````
+
+[` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 
+## MY INTERACTION
 
+How make a object interactable, an object that let me do click in it, for example to show a message or a modal in the screen or something like that.
+
+````csharp
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+
+public class HelloWorld : SceneObjectScript
+{
+    #region EditorProperties
+
+      //Public Variables
+        // Public Variables show in the object properties after being added to a script.
+        [DefaultValue("Click Me!")]     // This interaction will have a default prompt of "Click Me!"
+        public Interaction MyInteraction;         // An Interaction public property makes the script clickable.
+
+    #endregion
+
+    // Init() is where the script is setup and is run when the script starts.
+    public override void Init()
+    {
+        // Subscribe to interaction events to do something when the object is clicked.
+        MyInteraction.Subscribe(OnClick);
+    }
+
+    public void OnClick(InteractionData data)
+    {
+        // Find the agent that clicked.
+        AgentPrivate agent = ScenePrivate.FindAgent(data.AgentId);
+
+        // Send them a message.
+        agent.SendChat("Hello! Thanks for clicking me.");
+    }
+
+}
+//Some parts of this code use content from the Sansar Knowledge Base. � 2022 Sansar, Inc. Licensed under the Creative Commons Attribution 4.0 International License (license summary available at https://creativecommons.org/licenses/by/4.0/ and complete license terms available at https://creativecommons.org/licenses/by/4.0/legalcode).
+````
+
+
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 
 
