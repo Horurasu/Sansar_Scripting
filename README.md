@@ -26,10 +26,10 @@
   - 3.2.- [ADD A SCRIPT TO AN OBJECT](#ADD-A-SCRIPT-TO-AN-OBJECT)
   - 3.3.- [FUNCTION LOG](#FUNCTION-LOG)
   	  - 3.3.1- [CREATE A DEBUGGER](#CREATE-A-DEBUGGER)
-  - 3.4.- [MY INTERACTION PROPERTY](#MY-INTERACTION)
-  - 3.5.- [TAG NAME](#TAG-NAME)
-
-
+  - 3.4.- [TAG NAME](#TAG-NAME)
+  - 3.5.- [MESSAGES](#MESSAGES)
+  - 3.6.- [MY INTERACTION PROPERTY](#MY-INTERACTION)
+  - 3.7.- [AMOUNT](#AMOUNT)
 
 
 
@@ -184,17 +184,29 @@ Overall, the `AgentPrivate` and `AgentPublic` classes are used to interact with 
 
 The next part that we can see are the `Classes` where we can have more than one class where extend [SceneObjectScript](#SceneObjectScript) to create a script that can be used on content that is natively in the scene. This is the primary script type in Sansar.
 
+> ANOTHER EXPLANATION OF THE CLASSES
+
+I can explain more easy the classes for example when i have two departments to rent, i have the two building in the same piece of land, and i have a `REFRIGERATOR / MY VARIABLE`, if i put the refrigerator in the first `Building / ClassNumber1` the persons that live in the other building could not use the Refrigerator because i have it inside the other `Building / ClassNumber2` but if i put the Refrigerator in the garden, everybody can use it because all can access to it
+
 ```csharp
+
+
+//piece of land that i have
+
+public string Refrigerator; //the refrigerator in the  garden
+
 public class ClassNumber1 : SceneObjectScript
 {   
-
+        //this building - class can access to the refrigerator, but if i have / declare the refrigerator here the class number 2 can access to it
 }
 
 
-public class ClassNumber2 : SceneObjectScript
+public class ClassNumber2 : SceneObjectScript 
 {   
-
+        //this building - class can access to the refrigerator, but if i have / declare the refrigerator here the class number 1 can access to it
 }
+
+
 ```
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
@@ -477,6 +489,61 @@ public class TagName : SceneObjectScript
 
 [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
+## MESSAGES
+
+We can send two different message to the chat in sansar for example the first is send a message when we know the ID(the number of the player / identifier) and the second case is when we want to sent a message to al of the users in the experience
+
+> `Specific User Message` this message first we have to the ID of the player that interacted with the object or with the event in other cases.
+
+````csharp
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+
+public class HelloWorld : SceneObjectScript
+{
+    #region EditorProperties
+
+      //Public Variables
+        // Public Variables show in the object properties after being added to a script.
+        [DefaultValue("Click Me!")]     // This interaction will have a default prompt of "Click Me!"
+        public Interaction MyInteraction;    // An Interaction public property makes the script clickable.
+
+        
+        [Tooltip("Write the message that you want to show")] 
+        [DisplayName("Message")]
+        [DefaultValue("This is a message for who click in me :D")]
+        public string message; //variable that contents the message
+
+    #endregion
+
+    // Init() is where the script is setup and is run when the script starts.
+    public override void Init()
+    {
+        // Subscribe to interaction events to do something when the object is clicked.
+        MyInteraction.Subscribe(OnClick);
+    }
+
+    public void OnClick(InteractionData data)
+    {
+        // Find the agent that clicked.
+        AgentPrivate agent = ScenePrivate.FindAgent(data.AgentId);
+
+        // Send them a message.
+        agent.SendChat(message);
+    }
+
+}
+//Some parts of this code use content from the Sansar Knowledge Base. � 2022 Sansar, Inc. Licensed under the Creative Commons Attribution 4.0 International License (license summary available at https://creativecommons.org/licenses/by/4.0/ and complete license terms available at https://creativecommons.org/licenses/by/4.0/legalcode).
+````
+
+> `Message to all Users` this case we only have to send the message to all of the players in the experience.
+
+````csharp
+
+````
+
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ## MY INTERACTION
 
@@ -516,6 +583,101 @@ public class HelloWorld : SceneObjectScript
 
 }
 //Some parts of this code use content from the Sansar Knowledge Base. � 2022 Sansar, Inc. Licensed under the Creative Commons Attribution 4.0 International License (license summary available at https://creativecommons.org/licenses/by/4.0/ and complete license terms available at https://creativecommons.org/licenses/by/4.0/legalcode).
+````
+
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+
+
+## AMOUNT
+
+To make a script for sansar that create a amount that is increasing or decreasing when i do click and object 
+
+````csharp
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+using System;
+
+public class NumberCounter : SceneObjectScript
+{
+
+    #region Editor Properties
+
+        // Public properties
+
+            [Tooltip("Size of the steps that the code will perform")] 
+            [DisplayName("Steps")]
+            [DefaultValue(1.0f)]
+            public float StepSize; // steps in which the script will advance
+
+            [Tooltip("Give a name for the Interaction")] 
+            [DisplayName("Name Interaction")]
+            [DefaultValue("Click on me")]
+            public Interaction MyInteraction; // the action that make the object clickeable 
+
+            [Tooltip("Write the max number or the top")] 
+            [DisplayName("Number Max")]
+            [DefaultValue(10f)]
+            public float Max; //number max-top
+
+            [Tooltip("Write the min number or the down")] 
+            [DisplayName("Number Min")]
+            public float Min; // number min-bottom
+
+            [Tooltip("Write the number where starts")] 
+            [DisplayName("StartNumber")]
+            [DefaultValue(0f)]
+            public float StartNumber; //the number where the script will start- must be or between the max and min
+
+        // Private variables
+
+            private float CurrentNumber;
+
+            private bool isIncreasing = true; // a variable that let know the script if the number is increasing
+
+    #endregion
+
+    public override void Init()
+    {
+        
+        CurrentNumber = StartNumber; // we give the start number to the CurrentNumber
+
+        if((StartNumber >= Min)&&(StartNumber <= Max)){ //If we want that the script start we have to check if the start number is a valid number 
+
+            MyInteraction.Subscribe(OnClick); //if the StartNumber is valid the script will call the function OnClick
+
+        }
+
+    }
+
+    public void OnClick(InteractionData data)
+    {
+        
+        AgentPrivate agent = ScenePrivate.FindAgent(data.AgentId); //we have to
+
+        // Increase or decrease the angle
+        if (isIncreasing)
+        {
+            CurrentNumber += StepSize;
+            if (CurrentNumber >= Max)
+            {
+                isIncreasing = false;
+            }
+        }
+        else
+        {
+            CurrentNumber -= StepSize;
+            if (CurrentNumber <= Min)
+            {
+                isIncreasing = true;
+            }
+        }
+
+        string message = $"The current angle is {CurrentNumber} degrees.";
+        agent.SendChat(message);
+
+    }
+}
 ````
 
 
