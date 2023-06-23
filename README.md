@@ -19,9 +19,10 @@
 	    - 2.2.3- [CLASSES](#CLASSES)
 	    - 2.2.4- [VARIABLES](#VARIABLES)
         - 2.2.5- [ARRAYS](#ARRAYS)
-	    - 2.2.6- [EDITOR PROPERTIES](#EDITOR-PROPERTIES)
-	    - 2.2.7- [METHODS](#METHODS)
-	    - 2.2.8- [SCRIPT STRUCTURE](#SCRIPT-STRUCTURE)
+        - 2.2.7- [LOGICAL OPERATORS](#LOGICAL-OPERATORS)
+	    - 2.2.8- [EDITOR PROPERTIES](#EDITOR-PROPERTIES)
+	    - 2.2.9- [METHODS](#METHODS)
+	    - 2.2.10- [SCRIPT STRUCTURE](#SCRIPT-STRUCTURE)
 - 3.- [START TO PROGRAMMING](#START-TO-PROGRAMMING)
   - 3.1.- [IMPORT](#IMPORT)
   - 3.2.- [ADD A SCRIPT TO AN OBJECT](#ADD-A-SCRIPT-TO-AN-OBJECT)
@@ -207,8 +208,29 @@ public class ClassNumber2 : SceneObjectScript
         //this building - class can access to the refrigerator, but if i have / declare the refrigerator here the class number 1 can access to it
 }
 
-
 ```
+
+If we want both classes or scripts in the same `FILE` we have to use the `namespace` property, like in the next example:
+
+```csharp
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+
+namespace MyScripts // Here we can give it a name where the scripts will be stored
+{
+    public class ClassNumber1 : SceneObjectScript
+    {   
+        
+    }
+
+    public class ClassNumber2 : SceneObjectScript 
+    {   
+        
+    }
+}
+```
+
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ### VARIABLES
@@ -268,6 +290,40 @@ public class ArraysExamples : SceneObjectScript
     }
 }
 ````
+
+### LOGICAL OPERATORS
+
+A `LOGICAL OPERATOR` is a symbol or word used to connect two or more expressions such that the value of the compound expression produced depends only on that of the original expressions and on the meaning of the operator.
+
+The Logical Operator are used inside the conditions of a code ( IF , WHILE, etc..)
+
+| Operator | Description | Example |
+| --- | --- | --- |
+| && | Logical AND | if (x > 0 && y > 0) |
+| \|\| | Logical OR | if (x > 0 \|\| y > 0) |
+| ! | Logical NOT | if (!(x > 0)) |
+
+> The operator `&&` is a operator that let us add more than one condition in a sentence 
+
+> The operator `||` is a operator that let us consider two different options in a sentence
+
+> The operator `||` is a operator that negates a condition in a sentence
+
+> we can consider if we use `!=` we say that something that is different of what we have. for example:
+
+````csharp
+  
+public string Number = 7;
+
+if( Number != 10) // we check if the number is different of 10
+{
+    //we declare the number as 7 so the code will be execute because is different of 10
+    ScenePrivate.Chat.MessageAllUsers(message);
+
+}
+
+````
+
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
@@ -332,6 +388,48 @@ public class CodeStructure : SceneObjectScript
 }
 ````
 
+But if we want write more than one script in the same file we can use the same structure that we saw in the `NAMESPACE Property`.
+
+```csharp
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+
+namespace MyScripts
+{
+    public class ClassNumber1 : SceneObjectScript
+    {   
+        #region EditorProperties
+
+            //Public Variables
+            
+            //Private Variables
+
+        #endregion
+        
+        public override init()
+        {
+
+        }
+    }
+
+    public class ClassNumber2 : SceneObjectScript 
+    {   
+        #region EditorProperties
+
+            //Public Variables
+            
+            //Private Variables
+
+        #endregion
+
+        public override init()
+        {
+
+        }
+    }
+}
+```
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
@@ -809,6 +907,25 @@ public class NumberCounter : SceneObjectScript
 }
 ````
 
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+
+## MOVE OBJECTS
+
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+
+## ANIMATIONS
+
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+
+## SOUNDS
+
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+
+## MEDIA
+
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+
+## EVENTS
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
