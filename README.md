@@ -18,11 +18,12 @@
 	    - 2.2.2- [AGENTPRIVATE AND AGENTPUBLIC](#AGENTPRIVATE-AND-AGENTPUBLIC)
 	    - 2.2.3- [CLASSES](#CLASSES)
 	    - 2.2.4- [VARIABLES](#VARIABLES)
-	    - 2.2.5- [EDITOR PROPERTIES](#EDITOR-PROPERTIES)
-	    - 2.2.6- [METHODS](#METHODS)
-	    - 2.2.7- [SCRIPT STRUCTURE](#SCRIPT-STRUCTURE)
+        - 2.2.5- [ARRAYS](#ARRAYS)
+	    - 2.2.6- [EDITOR PROPERTIES](#EDITOR-PROPERTIES)
+	    - 2.2.7- [METHODS](#METHODS)
+	    - 2.2.8- [SCRIPT STRUCTURE](#SCRIPT-STRUCTURE)
 - 3.- [START TO PROGRAMMING](#START-TO-PROGRAMMING)
-	- 3.1.- [IMPORT](#IMPORT)
+  - 3.1.- [IMPORT](#IMPORT)
   - 3.2.- [ADD A SCRIPT TO AN OBJECT](#ADD-A-SCRIPT-TO-AN-OBJECT)
   - 3.3.- [FUNCTION LOG](#FUNCTION-LOG)
   	  - 3.3.1- [CREATE A DEBUGGER](#CREATE-A-DEBUGGER)
@@ -220,15 +221,17 @@ public class ClassNumber2 : SceneObjectScript
 
 |Variable Types||Example|
 |-|-|-|
-|`string`|Used to store text or a sequence of characters.|text|
+|`string`|Used to store text or a sequence of characters.|"text"|
 |`int`|Used to store integer numbers|5|
 |`bool`|Used to store Boolean values (true or false)|true|
 |`float`|Used to store floating-point numbers (which approximate real numbers)|1.5f|
+|`double`|A double is a data type in C language that stores high-precision floating-point data or numbers in computer memory|2.85|
 |`Vector`|Used to store a position or direction in three-dimensional space|Vector.Up|
 |`Quaternion`|Used to store an orientation in three-dimensional space.|Quaternion.FromAngleAxis()|
+|`Sansar.Color`|Structure that allows you to access, convert, and parse known colors in the system|1,0.8,0.5,1|
 |`Interaction`|This is a variable that is used to represent an interaction between objects in the scene. It can be used to trigger events or actions when objects come into contact with each other.|MyInteraction|
-|`ClusterResource`|This is a variable that is used to represent a resource that is shared among multiple objects in the scene. It can be used to store data or assets that are used by multiple objects.|MyInteraction|
-|`SoundResource`|This is a variable that is used to represent a sound that is played in the scene. It can be used to play music or sound effects in response to events or actions.|MyInteraction|
+|`ClusterResource`|This is a variable that is used to represent a resource that is shared among multiple objects in the scene. It can be used to store data or assets that are used by multiple objects.|ClusterResource|
+|`SoundResource`|This is a variable that is used to represent a sound that is played in the scene. It can be used to play music or sound effects in response to events or actions.|SoundResource|
 
 ````csharp
 public class Variables : SceneObjectScript
@@ -240,6 +243,29 @@ public class Variables : SceneObjectScript
         public string Message2= "hello2";
 
     #endregion
+}
+````
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+
+### ARRAYS
+
+In `Sansar` we have a limit of properties to which we can access because we only can access to a maximum of `20` properties for each list, we should consider that `List not work with every variables` because some of them have other functions and only work with one of them
+
+````csharp
+public class ArraysExamples : SceneObjectScript
+{
+    #region EditorProperties
+
+        //Public properties
+            public List<bool> Bools;
+            public List<int> Ints;
+            public List<float> Floats;
+
+    #endregion
+
+    public override void Init() {
+
+    }
 }
 ````
 
@@ -493,9 +519,13 @@ public class TagName : SceneObjectScript
 
 We can send two different message to the chat in sansar for example the first is send a message when we know the ID(the number of the player / identifier) and the second case is when we want to sent a message to al of the users in the experience
 
+<H3> MESSAGE TO A SPECIFIC USER </H3>
+
 > `Specific User Message` this message first we have to the ID of the player that interacted with the object or with the event in other cases.
 
 ````csharp
+//Some parts of this code use content from the Sansar Knowledge Base. � 2022 Sansar, Inc. Licensed under the Creative Commons Attribution 4.0 International License (license summary available at https://creativecommons.org/licenses/by/4.0/ and complete license terms available at https://creativecommons.org/licenses/by/4.0/legalcode).
+
 using Sansar;
 using Sansar.Script;
 using Sansar.Simulation;
@@ -534,13 +564,123 @@ public class HelloWorld : SceneObjectScript
     }
 
 }
-//Some parts of this code use content from the Sansar Knowledge Base. � 2022 Sansar, Inc. Licensed under the Creative Commons Attribution 4.0 International License (license summary available at https://creativecommons.org/licenses/by/4.0/ and complete license terms available at https://creativecommons.org/licenses/by/4.0/legalcode).
 ````
+
+<H3> MESSAGE TO ALL USERS </H3>
 
 > `Message to all Users` this case we only have to send the message to all of the players in the experience.
 
 ````csharp
+//Some parts of this code use content from the Sansar Knowledge Base. � 2022 Sansar, Inc. Licensed under the Creative Commons Attribution 4.0 International License (license summary available at https://creativecommons.org/licenses/by/4.0/ and complete license terms available at https://creativecommons.org/licenses/by/4.0/legalcode).
 
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+
+public class HelloWorld : SceneObjectScript
+{
+    #region EditorProperties
+
+    //Public Variables
+        // Public Variables show in the object properties after being added to a script.
+        [DefaultValue("Click Me!")]     // This interaction will have a default prompt of "Click Me!"
+        public Interaction MyInteraction;    // An Interaction public property makes the script clickable.
+
+        [Tooltip("Write the message that you want to show")] 
+        [DisplayName("Message")]
+        [DefaultValue("This is a message for everyone, because someone click on the object :D")]
+        public string message; //variable that contents the message
+
+    #endregion
+
+    // Init() is where the script is setup and is run when the script starts.
+    public override void Init()
+    {
+        // Subscribe to interaction events to do something when the object is clicked.
+        MyInteraction.Subscribe(OnClick);
+    }
+
+    public void OnClick(InteractionData data)
+    {
+        ScenePrivate.Chat.MessageAllUsers(message);
+    }
+}
+````
+
+> `Message to all Users when the experience starts` this case we only have to send the message to all of the players in the experience.
+
+<H3> MODAL MESSAGE</H3>
+
+> `Modal Message` the modal messages show a modal to the avatar that show a message with buttons that have different options
+
+````csharp
+//Some parts of this code use content from the Sansar Knowledge Base. � 2022 Sansar, Inc. Licensed under the Creative Commons Attribution 4.0 International License (license summary available at https://creativecommons.org/licenses/by/4.0/ and complete license terms available at https://creativecommons.org/licenses/by/4.0/legalcode).
+
+//necessary namespaces for the script to work
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+
+public class ModalMessage : SceneObjectScript
+{
+    #region EditorProperties
+
+        //Public Variables
+
+            [Tooltip("Write the questions to show")] 
+            [DisplayName("Question")] 
+            [DefaultValue("Write your Question")]
+            public string Question;
+
+            [Tooltip("Write the first option")] 
+            [DisplayName("First Option")] 
+            [DefaultValue("A")]
+            public string Option1;
+
+            [Tooltip("Write the second option")] 
+            [DisplayName("Second Option")] 
+            [DefaultValue("B")]
+            public string Option2;
+
+            [Tooltip("Write the first answer for the questions")] 
+            [DisplayName("First Answer")] 
+            [DefaultValue("First Option Result")]
+            public string Answer1;
+
+            [Tooltip("Write the second answer for the questions")] 
+            [DisplayName("Second Answer")] 
+            [DefaultValue("Second Option Result")]
+            public string Answer2;
+            
+            [DefaultValue("Click Me!")]
+            public Interaction MyInteraction;
+
+    #endregion
+
+    // Init() is where the script is setup and is run when the script starts.
+    public override void Init()
+    {
+        // Subscribe to interaction events to do something when the object is clicked.
+        MyInteraction.Subscribe(Action);
+    }
+
+    public void Action(InteractionData data)
+    {
+        // Find the agent that clicked.
+        AgentPrivate agent = ScenePrivate.FindAgent(data.AgentId);
+
+        if (agent != null) 
+        {   
+            agent.Client.UI.ModalDialog.Show(Question, Option1, Option2, (opc) =>
+            {
+                if (agent.Client.UI.ModalDialog.Response == Answer1)
+                    agent.SendChat(Answer1);
+                else
+                    agent.SendChat(Answer2);
+            });
+        }
+    }
+}
 ````
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
@@ -632,7 +772,6 @@ public class NumberCounter : SceneObjectScript
         // Private variables
 
             private float CurrentNumber;
-
             private bool isIncreasing = true; // a variable that let know the script if the number is increasing
 
     #endregion
@@ -641,25 +780,17 @@ public class NumberCounter : SceneObjectScript
     {
         
         CurrentNumber = StartNumber; // we give the start number to the CurrentNumber
-
         if((StartNumber >= Min)&&(StartNumber <= Max)){ //If we want that the script start we have to check if the start number is a valid number 
-
-            MyInteraction.Subscribe(OnClick); //if the StartNumber is valid the script will call the function OnClick
-
+            MyInteraction.Subscribe(OnClick); //if the Start Number is valid the script will call the function OnClick
         }
-
-    }
 
     public void OnClick(InteractionData data)
     {
-        
         AgentPrivate agent = ScenePrivate.FindAgent(data.AgentId); //we have to
-
         // Increase or decrease the angle
         if (isIncreasing)
         {
             CurrentNumber += StepSize;
-            if (CurrentNumber >= Max)
             {
                 isIncreasing = false;
             }
@@ -672,10 +803,8 @@ public class NumberCounter : SceneObjectScript
                 isIncreasing = true;
             }
         }
-
         string message = $"The current angle is {CurrentNumber} degrees.";
         agent.SendChat(message);
-
     }
 }
 ````
