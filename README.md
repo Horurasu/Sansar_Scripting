@@ -27,12 +27,19 @@
   - 3.1.- [IMPORT](#IMPORT)
   - 3.2.- [ADD A SCRIPT TO AN OBJECT](#ADD-A-SCRIPT-TO-AN-OBJECT)
   - 3.3.- [FUNCTION LOG](#FUNCTION-LOG)
-  	  - 3.3.1- [CREATE A DEBUGGER](#CREATE-A-DEBUGGER)
+     - 3.3.1- [CREATE A DEBUGGER](#CREATE-A-DEBUGGER)
   - 3.4.- [TAG NAME](#TAG-NAME)
   - 3.5.- [MESSAGES](#MESSAGES)
+     - 3.5.1- [MESSAGE TO A SPECIFIC USER ](#MESSAGE-TO-A-SPECIFIC-USER )
+     - 3.5.2- [MESSAGE TO ALL USERS](#MESSAGE-TO-ALL-USERS)
+     - 3.5.3- [MODAL MESSAGE](#MODAL-MESSAGE)
   - 3.6.- [MY INTERACTION PROPERTY](#MY-INTERACTION)
   - 3.7.- [AMOUNT](#AMOUNT)
-
+  - 3.8.- [MOVE OBJECTS](#MOVE-OBJECTS)
+  - 3.9.- [ANIMATIONS](#ANIMATIONS)
+  - 3.10.- [SOUNDS](#SOUNDS)
+  - 3.11.- [MEDIA](#MEDIA)
+- 4.- [SANSAR SCRIPT LIBRARY](#SANSAR-SCRIPT-LIBRARY)
 
 
 
@@ -502,6 +509,7 @@ If the `Code` does not present any problem this will be added to the `Inventory 
   alt="image"
   title="InventoryWindows"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
+
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 
@@ -617,7 +625,7 @@ public class TagName : SceneObjectScript
 
 We can send two different message to the chat in sansar for example the first is send a message when we know the ID(the number of the player / identifier) and the second case is when we want to sent a message to al of the users in the experience
 
-<H3> MESSAGE TO A SPECIFIC USER </H3>
+### MESSAGE TO A SPECIFIC USER 
 
 > `Specific User Message` this message first we have to the ID of the player that interacted with the object or with the event in other cases.
 
@@ -664,7 +672,7 @@ public class HelloWorld : SceneObjectScript
 }
 ````
 
-<H3> MESSAGE TO ALL USERS </H3>
+ ### MESSAGE TO ALL USERS
 
 > `Message to all Users` this case we only have to send the message to all of the players in the experience.
 
@@ -707,7 +715,7 @@ public class HelloWorld : SceneObjectScript
 
 > `Message to all Users when the experience starts` this case we only have to send the message to all of the players in the experience.
 
-<H3> MODAL MESSAGE</H3>
+### MODAL MESSAGE
 
 > `Modal Message` the modal messages show a modal to the avatar that show a message with buttons that have different options
 
@@ -925,9 +933,8 @@ public class NumberCounter : SceneObjectScript
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
-## EVENTS
+
+# SANSAR SCRIPT LIBRARY
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
-
-
 
