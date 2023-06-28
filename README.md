@@ -1,10 +1,11 @@
+<h1 align="center"> SANSAR GUIDE  </h1> 
+
 <img
   src="/Images/SANSARLOGO.png"
   alt="image"
   title="Menu"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
-<h1 align="center"> SANSAR GUIDE  </h1> 
 
 ## CONTENT TABLE
 
@@ -314,7 +315,7 @@ The Logical Operator are used inside the conditions of a code ( IF , WHILE, etc.
 
 > The operator `||` is a operator that let us consider two different options in a sentence
 
-> The operator `||` is a operator that negates a condition in a sentence
+> The operator `!` is a operator that negates a condition in a sentence
 
 > we can consider if we use `!=` we say that something that is different of what we have. for example:
 
@@ -930,11 +931,19 @@ public class NumberCounter : SceneObjectScript
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ## MEDIA
-
+B
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 
 # SANSAR SCRIPT LIBRARY
+
+In sansar we can write our owns script or use one that is already compiled and inside the environment, where we have two different `libraries of Scripts` we have the `Sansar Script Library` and the `Quest Script Library`, first we will see the Sansar Script Library, in these library we can find some Sansar Scripts that only with add a `Script` we can use them.
+
+We also can find other script of Sansar but them are in code, we can find them in the docs where Sansar is installed.
+
+> `C:\Program Files\Sansar\Client\ScriptApi\Examples`
+
+We can compile the scripts to use them in sansar because all of them work correctly, we can use parts of those codes to create some new, the only things that most of that script have written is that you have to pus the rights and license is under the terms of the Creative Commons Attribution, and the work use content from the sansar knowledge base. 
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
