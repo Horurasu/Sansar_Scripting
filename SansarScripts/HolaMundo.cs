@@ -21,10 +21,10 @@ public class HelloWorld : SceneObjectScript
     public override void Init()
     {
         // Subscribe to interaction events to do something when the object is clicked.
-        MyInteraction.Subscribe(OnClick);
+            MyInteraction.Subscribe(OnClick);
     }
 
-    public void OnClick(InteractionData data)
+     public void OnClick(InteractionData data)
     {
         // Find the agent that clicked.
         AgentPrivate agent = ScenePrivate.FindAgent(data.AgentId);
