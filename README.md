@@ -1041,7 +1041,7 @@ public class MoverExample1 : SceneObjectScript
 
 ```
 
-we can see that most of the code have comments that explain what the code do in each line. an example that we can configure the code as we want could be:
+We can see that most of the code have comments that explain what the code do in each line. an example that we can configure the code as we want could be:
 
 > Using the code of `MoveExample1` we will make that when we click a button or an object push other object with the script above.
 
@@ -1062,7 +1062,7 @@ namespace MessagingScripts
 
             //Public Variables
                 [DefaultValue("Click Me!")]
-                public Interaction MyInteraction;
+                public Interaction MyInteraction; //this let the object clickable
 
             //Private Variables
 
@@ -1072,7 +1072,7 @@ namespace MessagingScripts
         {
             MyInteraction.Subscribe((InteractionData data) =>
             {
-                PostScriptEvent("The_object_was_clicked");
+                PostScriptEvent("The_object_was_clicked");  //send the event that will be heard by the other class
             });
         }
     }
@@ -1083,20 +1083,19 @@ namespace MessagingScripts
 
             //Public Variables
                 [DefaultValue("Hello from the script")]
-                public string message;
+                public string message;  //message that will be sended to the Log to show if the code is working correctly
 
             //Private Variables
 
         #endregion 
 
         public override void Init()
-        {
-                SubscribeToScriptEvent("The_object_was_clicked", (ScriptEventData data) =>
-                {
-
-                    Log.Write(message);
-
-                });
+        {       
+            // the code wait that the event is sended to execute the code
+            SubscribeToScriptEvent("The_object_was_clicked", (ScriptEventData data) =>
+            {
+                Log.Write(message);  //show the message in the log to check if this is working correctly
+            });
         }
 
     }
