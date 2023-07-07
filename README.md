@@ -3,7 +3,7 @@
 <img
   src="/Images/SANSARLOGO.png"
   alt="image"
-  title="Menu"
+  title="Logo"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
 
@@ -40,9 +40,8 @@
   - 3.9.- [ANIMATIONS](#ANIMATIONS)
   - 3.10.- [SOUNDS](#SOUNDS)
   - 3.11.- [MEDIA](#MEDIA)
+  - 3.12.- [CALL CODE BY CLASSES](#CALL-CODE-BY-CLASSES)
 - 4.- [SANSAR SCRIPT LIBRARY](#SANSAR-SCRIPT-LIBRARY)
-
-
 
 
 ### OTHER LINKS
@@ -928,12 +927,139 @@ public class NumberCounter : SceneObjectScript
 
 ## SOUNDS
 
+We have some properties in Sansar to work with `Audios`, In the editor of sansar we can find the properties
+
+<img
+  src="/Images/SoundObject.png"
+  alt="image"
+  title="SoundObject"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+We have 3 different types of sound emitters
+
+- `Point` This type make that the sound comes from an specific point in the scene 
+- `Cuboid` The cuboid let us change the shape of the object
+- `Sphere`  This works like an area instead like a block
+
+<img
+  src="/Images/TypeSoundEmitters.png"
+  alt="image"
+  title="TypeSoundEmitters"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+We can use different Sound Sources but in some we need to import the `files`, this is really similar to import an script.
+
+<img
+  src="/Images/ImportAudio.png"
+  alt="image"
+  title="ImportAudio"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+This will show another window:
+
+<img
+  src="/Images/ImportWindow.png"
+  alt="image"
+  title="ImportWindow"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+`Sound File`
+
+This admit the audios in the formats: 
+- .aif, aiff, .ambix, .wav, .flac, .it, .mid, .midi, .mod, .mp2, .mp3, .ogg, .s3m, .wav, .wma, .xm
+
+`Name of item in inventory`
+
+- We can rename object to preview in inventory
+
+When we have a Sound Emitter in the scene we can find some options in their properties like the positions like the other objects.
+
+But we can find another options belong to the Audios.
+
+<img
+  src="/Images/PropertiesSound.png"
+  alt="image"
+  title="PropertiesSound"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+- `Sound` The first option let us change the Sound Source, we can use a stream source or choose the sound from the inventory importing the file.
+
+- `Loudness` This let us to change the loudness of the audio
+
+- `Emitter Shape` This let change the form of the emitter
+
+- ` Size / Radius`   With this depending of the emitter let  change the structure of the object
+
+
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ## MEDIA
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
+
+## CALL CODE BY CLASSES
+
+- We have to make that we can send a message that when is received execute another block of code that will be executed when the message is received
+
+```csharp
+using Sansar;
+using Sansar.Script;
+using Sansar.Simulation;
+using System;
+
+
+namespace MessagingScripts
+{
+    public class Emitter : SceneObjectScript
+    {   
+        #region Editor Properties
+
+            //Public Variables
+                [DefaultValue("Click Me!")]
+                public Interaction MyInteraction; //this let the object clickable
+
+            //Private Variables
+
+        #endregion 
+
+        public override void Init()
+        {
+            MyInteraction.Subscribe((InteractionData data) =>
+            {
+                PostScriptEvent("The_object_was_clicked");  //send the event that will be heard by the other class
+            });
+        }
+    }
+
+    public class Receiver : SceneObjectScript
+    {
+        #region Editor Properties
+
+            //Public Variables
+                [DefaultValue("Hello from the script")]
+                public string message;  //message that will be sended to the Log to show if the code is working correctly
+
+            //Private Variables
+
+        #endregion 
+
+        public override void Init()
+        {       
+            // the code wait that the event is sended to execute the code
+            SubscribeToScriptEvent("The_object_was_clicked", (ScriptEventData data) =>
+            {
+                Log.Write(message);  //show the message in the log to check if this is working correctly
+            });
+        }
+
+    }
+}
+```
+
+We can use the code above to create a lot of different scripts, where we want that one class call another one to generate an action when an event occurs 
+
+ [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 # SANSAR SCRIPT LIBRARY
 
@@ -1041,66 +1167,12 @@ public class MoverExample1 : SceneObjectScript
 
 ```
 
+
 We can see that most of the code have comments that explain what the code do in each line. an example that we can configure the code as we want could be:
 
 > Using the code of `MoveExample1` we will make that when we click a button or an object push other object with the script above.
 
-- We have to make that we can send a message that when is received execute another block of code that will be executed when the message is received
 
-```csharp
-using Sansar;
-using Sansar.Script;
-using Sansar.Simulation;
-using System;
-
-
-namespace MessagingScripts
-{
-    public class Emitter : SceneObjectScript
-    {   
-        #region Editor Properties
-
-            //Public Variables
-                [DefaultValue("Click Me!")]
-                public Interaction MyInteraction; //this let the object clickable
-
-            //Private Variables
-
-        #endregion 
-
-        public override void Init()
-        {
-            MyInteraction.Subscribe((InteractionData data) =>
-            {
-                PostScriptEvent("The_object_was_clicked");  //send the event that will be heard by the other class
-            });
-        }
-    }
-
-    public class Receiver : SceneObjectScript
-    {
-        #region Editor Properties
-
-            //Public Variables
-                [DefaultValue("Hello from the script")]
-                public string message;  //message that will be sended to the Log to show if the code is working correctly
-
-            //Private Variables
-
-        #endregion 
-
-        public override void Init()
-        {       
-            // the code wait that the event is sended to execute the code
-            SubscribeToScriptEvent("The_object_was_clicked", (ScriptEventData data) =>
-            {
-                Log.Write(message);  //show the message in the log to check if this is working correctly
-            });
-        }
-
-    }
-}
-```
 
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
