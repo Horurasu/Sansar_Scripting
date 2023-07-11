@@ -954,11 +954,54 @@ We can see that we have 3 axis, we can move those positions and rotations as we 
 - `GREEN` in the scene editor is the `Y-Axis`
 - `BLUE` in the scene editor is the `Z-Axis`
 
-If you have already used a program or somethings that work with objects in `3D` we to intuit that if we move the object from the Axis `Blue (Z)` this moves in the `Z Axis` but with this script in sansar that not works in that way, to move the object we have to change the position offset in the `Y` space (`to move the object where the arrow is pointing we have to write POSITIVE NUMBERS,to move it to the opposite direction we have to write , but this can change in some cases, i will show which option space move each of the Axis`)
+If you have already used a program or somethings that work with objects in `3D` we to intuit that if we move the object from the Axis `Blue (Z)` this moves in the `Z Axis` but with this script in sansar that not works in that way, to move the object we have to change the position offset in the `Y` space (`to move the object where the arrow is pointing we have to write POSITIVE NUMBERS,to move it to the opposite direction we have to write , but this can change in some cases, i will show which option space move each of the Axis`).
 
-> Position Offset in the script `X` moves the `X` axis of the editor
+<img
+  src="/Images/positionset.png"
+  alt="image"
+  title="positionset"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+
+> Position Offset in the script `X` moves the `X` axis of the editor    
+
 > Position Offset in the script `Y` moves the `Z` axis of the editor
+
 > Position Offset in the script `Z` moves the `Y` axis of the editor
+
+If we want to rotate the object we have to consider something similar because if we want to rotate the `X axis from the editor` in the rotation offset we have to change the value of `Z` in the script, if we want to move the `Y axis from the editor` we have to change the value of `X`, and for the `Z axis form the editor` we change the value of `Y`.
+
+<img
+  src="/Images/rotationset.png"
+  alt="image"
+  title="rotationset"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+> Rotation Offset in the script `X` moves the `Y` axis of the editor    
+
+> Rotation Offset in the script `Y` moves the `Z` axis of the editor
+
+> Rotation Offset in the script `Z` moves the `X` axis of the editor
+
+
+We can buy the red button in the store or use another object to create the interaction between the button and the object, we have to set up the script, we have to add the `move` script to one object and the `InteractionManager` script to other object
+
+> `IMPORTANT` we have ot make the object movable from scripts, we have to activate the option in the `Transform` area
+
+BUTTON PROPERTIES - INTERACTION MANAGER SCRIPT 
+
+- We will give a name for the event: `move` and another name for the reset event `move_reset` 
+
+- The exercise try to do a elevator, so we have to change the position offset in the `Y` space to move the object in the `Z` axis of the editor
+
+- The option Over time could be change it to make the movement more fast or slow but we will let it in 2
+
+OBJECT - MOVE SCRIPT
+
+- we have to use only two options, the first is the Interaction Prompt, the message that we write here will be show in the scene, so we will write `Click me to execute the movement`
+
+- the other option is  `This Click -> move >> move_reset`,
+
 
 > SECOND OPTION
 
