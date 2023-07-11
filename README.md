@@ -919,6 +919,53 @@ public class NumberCounter : SceneObjectScript
 
 ## MOVE OBJECTS
 
+To move an object we have several options, we can make a script using code or we can use the script of movement that sansar give us in the libraries or in the codes that is already done in the files of sansar.
+
+> FIRST OPTION
+
+For this option we wil use the script in the `Sansar Script Library` , we can find it with the name `ScriptLibrary.mover`
+
+<img
+  src="/Images/moverscript.png"
+  alt="image"
+  title="moverscript"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+At first part you might be intimidated but we will not use all the options for this part.
+
+- `Move Event` Here we give a name for the action move the object to executed with other script or action in the scene
+- `Reset Event` Here we give a name for the action that return the original position of the object
+- `Position Offset` Here we choose the movement that the object will do 
+- `Rotation Offset` Here we can choose a rotation if we want that the object rotate in the movement
+- `Over time` The time it takes to perform the action
+
+to move the object in this case we have to consider the orientation of the `Axis`
+
+<img
+  src="/Images/axiseditor.png"
+  alt="image"
+  title="axiseditor"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+We can see that we have 3 axis, we can move those positions and rotations as we want.
+
+ `AXIS EDITOR`
+- `RED` in the scene editor is the `X-Axis`
+- `GREEN` in the scene editor is the `Y-Axis`
+- `BLUE` in the scene editor is the `Z-Axis`
+
+If you have already used a program or somethings that work with objects in `3D` we to intuit that if we move the object from the Axis `Blue (Z)` this moves in the `Z Axis` but with this script in sansar that not works in that way, to move the object we have to change the position offset in the `Y` space (`to move the object where the arrow is pointing we have to write POSITIVE NUMBERS,to move it to the opposite direction we have to write , but this can change in some cases, i will show which option space move each of the Axis`)
+
+> Position Offset in the script `X` moves the `X` axis of the editor
+> Position Offset in the script `Y` moves the `Z` axis of the editor
+> Position Offset in the script `Z` moves the `Y` axis of the editor
+
+> SECOND OPTION
+
+
+> THIRD OPTION
+
+
  [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 ## ANIMATIONS
