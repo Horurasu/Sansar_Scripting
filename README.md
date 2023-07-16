@@ -10,49 +10,48 @@
 ## CONTENT TABLE
 
 - 1.- [INTRODUCTION](#introduction) 
-	- 1.1.- [WHAT IS SANSAR](#WHAT-IS-SANSAR)
-	- 1.2.- [WHY PROGRAMMING IN C# LANGUAGE](#WHY-PROGRAMMING-IN-CSHARP-LANGUAGE)
-- 2.- [INTRODUCTION TO PROGRAMMING](#INTRODUCTION-TO-SANSAR-PROGRAMMING)
-	- 2.1.- [VISUAL STUDIO CODE CONFIGURATION](#VISUAL-STUDIO-CODE-CONFIG)
-	- 2.2.- [BASIC CONCEPTS](#BASIC-CONCEPTS)
-	    - 2.2.1- [SANSAR NAMESPACES OR LIBRARIES](#SANSAR-NAMESPACES-OR-LIBRARIES)
-	    - 2.2.2- [AGENTPRIVATE AND AGENTPUBLIC](#AGENTPRIVATE-AND-AGENTPUBLIC)
-	    - 2.2.3- [CLASSES](#CLASSES)
-	    - 2.2.4- [VARIABLES](#VARIABLES)
-        - 2.2.5- [ARRAYS](#ARRAYS)
-        - 2.2.7- [LOGICAL OPERATORS](#LOGICAL-OPERATORS)
-	    - 2.2.8- [EDITOR PROPERTIES](#EDITOR-PROPERTIES)
-	    - 2.2.9- [METHODS](#METHODS)
-	    - 2.2.10- [SCRIPT STRUCTURE](#SCRIPT-STRUCTURE)
-- 3.- [START TO PROGRAMMING](#START-TO-PROGRAMMING)
-  - 3.1.- [IMPORT](#IMPORT)
-  - 3.2.- [ADD A SCRIPT TO AN OBJECT](#ADD-A-SCRIPT-TO-AN-OBJECT)
-  - 3.3.- [FUNCTION LOG](#FUNCTION-LOG)
-     - 3.3.1- [CREATE A DEBUGGER](#CREATE-A-DEBUGGER)
-  - 3.4.- [TAG NAME](#TAG-NAME)
-  - 3.5.- [MESSAGES](#MESSAGES)
-     - 3.5.1- [MESSAGE TO A SPECIFIC USER ](#MESSAGE-TO-A-SPECIFIC-USER )
-     - 3.5.2- [MESSAGE TO ALL USERS](#MESSAGE-TO-ALL-USERS)
-     - 3.5.3- [MODAL MESSAGE](#MODAL-MESSAGE)
-  - 3.6.- [MY INTERACTION PROPERTY](#MY-INTERACTION)
-  - 3.7.- [AMOUNT](#AMOUNT)
-  - 3.8.- [MOVE OBJECTS](#MOVE-OBJECTS)
-  - 3.9.- [ANIMATIONS](#ANIMATIONS)
-  - 3.10.- [SOUNDS](#SOUNDS)
-  - 3.11.- [MEDIA](#MEDIA)
-  - 3.12.- [CALL CODE BY CLASSES](#CALL-CODE-BY-CLASSES)
-- 4.- [SANSAR SCRIPT LIBRARY](#SANSAR-SCRIPT-LIBRARY)
+	- 1.1.- [WHAT IS SANSAR](#what-is-sansar)
+	- 1.2.- [WHY PROGRAMMING IN C# LANGUAGE](#why-programming-in-csharp-language)
+- 2.- [INTRODUCTION TO PROGRAMMING](#introduction-to-sansar-programming)
+	- 2.1.- [VISUAL STUDIO CODE CONFIGURATION](#visual-studio-code-config)
+	- 2.2.- [BASIC CONCEPTS](#basic-concepts)
+	    - 2.2.1- [SANSAR NAMESPACES OR LIBRARIES](#sansar-namespaces-or-libraries)
+	    - 2.2.2- [AGENTPRIVATE AND AGENTPUBLIC](#agentprivate-and-agentpublic)
+	    - 2.2.3- [CLASSES](#classes)
+	    - 2.2.4- [VARIABLES](#variables)
+        - 2.2.5- [ARRAYS](#arrays)
+        - 2.2.7- [LOGICAL OPERATORS](#logical-operators)
+	    - 2.2.8- [EDITOR PROPERTIES](#editor-properties)
+	    - 2.2.9- [METHODS](#methods)
+	    - 2.2.10- [SCRIPT STRUCTURE](#script-structure)
+- 3.- [START TO PROGRAMMING](#start-to-programming)
+  - 3.1.- [IMPORT](#import)
+  - 3.2.- [ADD A SCRIPT TO AN OBJECT](#add-a-script-to-an-object)
+  - 3.3.- [FUNCTION LOG](#function-log)
+     - 3.3.1- [CREATE A DEBUGGER](#create-a-debugger)
+  - 3.4.- [TAG NAME](#tag-name)
+  - 3.5.- [MESSAGES](#messages)
+     - 3.5.1- [MESSAGE TO A SPECIFIC USER ](#message-to-a-specific-user)
+     - 3.5.2- [MESSAGE TO ALL USERS](#message-to-all-users)
+     - 3.5.3- [MODAL MESSAGE](#modal-message)
+  - 3.6.- [MY INTERACTION PROPERTY](#my-interaction)
+  - 3.7.- [AMOUNT](#amount)
+  - 3.8.- [MOVE OBJECTS](#move-objects)
+  - 3.9.- [ANIMATIONS](#animations)
+  - 3.10.- [SOUNDS](#sounds)
+  - 3.11.- [MEDIA](#media)
+  - 3.12.- [CALL CODE BY CLASSES](#call-code-by-classes)
+- 4.- [SANSAR SCRIPT LIBRARY](#sansar-script-library)
+<details align="right">
+  <summary>SANSAR SCRIPT LIBRARY</summary>
 
+- a.- [Script1](#introduction)
+- a.- [Script1](#introduction) 
+- a.- [Script1](#introduction) 
 
+</details>
 
-### OTHER LINKS
-
-||Links|
-|-|-|
-|Sansar script guide|[EvoAv/ScriptGuide](https://github.com/darwinrecreant/sansar-scripting-guide)|
-|Sansar script guide|[MojoD/ScriptGuide](https://github.com/mojoD/sansar-script)|
-
-<em>*The references guides is not our authorship</em>
+- 5.- [OTHERS LINKS](#sansar-script-library)
 
 
 # INTRODUCTION
@@ -60,7 +59,7 @@
 > If you're interested in creating interactive experiences in Sansar, scripting is an essential skill to learn. Scripts allow us to make interactive and reactive content in Sansar. They are written in C# and are designed to be easy to use, even for beginners. Whether you're looking to create a simple interactive object or a complex game, scripting is the key to unlocking the full potential of Sansar. In this guide, we'll cover the basics of scripting in Sansar, including how to use the Script API, how to create triggers, and how to test and refine your scripts. By the end of this guide, you'll have the knowledge and skills you need to start creating your own custom behaviors and interactive experiences in Sansar.
 
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## WHAT IS SANSAR
 
@@ -68,7 +67,7 @@ Sansar is a 3D virtual world platform developed by Linden Lab, the same company 
 
 > <p style="text-align: justify;">The platform allows users to create and explore virtual worlds, interact with other users, and participate in live events. Sansar describes itself as a social virtual reality platform, where users can create their own avatars and customize their experience in the virtual world. The platform supports virtual reality headsets such as the Oculus Rift and HTC Vive, as well as desktop browsing. Sansar also offers content creation tools so users can design and build their own virtual worlds. The platform launched in 2017 and has been described as the "heir" to Second Life.</p>
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## WHY PROGRAMMING IN CSHARP LANGUAGE
 
@@ -78,7 +77,7 @@ Sansar is a 3D virtual world platform developed by Linden Lab, the same company 
 
 If you already have a Script for Sansar you can jump to the [import](#IMPORT) part to upload you script to sansar.
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 # INTRODUCTION TO SANSAR PROGRAMMING 
 
@@ -92,7 +91,7 @@ The IDE that work better to write scripts for Sansar is VsCode to write script w
     
 <em>*The references guides is not our authorship</em>
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## BASIC CONCEPTS
 
@@ -108,7 +107,7 @@ The basics of programming in Sansar are similar to those of any other programmin
 
 In short, the basics of programming in Sansar include variables, functions, events, and control structures. These concepts are fundamental to the creation of Sansar scripts that control the behavior of objects in the virtual world.
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 
 ### SANSAR NAMESPACES OR LIBRARIES
@@ -176,7 +175,7 @@ Here is included one more important:
 
 This class is the base class for all scripts that are attached to objects in the scene. It provides access to the object that the script is attached to, as well as other components that are attached to the object.
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ### AGENTPRIVATE AND AGENTPUBLIC
 
@@ -188,7 +187,7 @@ This class is the base class for all scripts that are attached to objects in the
 
 Overall, the `AgentPrivate` and `AgentPublic` classes are used to interact with avatars in different ways depending on the desired visibility of the interaction. If you want to learn more about Sansar scripting, you can check out the resources in
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ### CLASSES
 
@@ -239,7 +238,7 @@ namespace MyScripts // Here we can give it a name where the scripts will be stor
 }
 ```
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ### VARIABLES
 
@@ -275,7 +274,7 @@ public class Variables : SceneObjectScript
     #endregion
 }
 ````
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ### ARRAYS
 
@@ -298,6 +297,7 @@ public class ArraysExamples : SceneObjectScript
     }
 }
 ````
+[` ▲ BACK TO TOP` ](#content-table)
 
 ### LOGICAL OPERATORS
 
@@ -333,7 +333,7 @@ if( Number != 10) // we check if the number is different of 10
 ````
 
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ### EDITOR PROPERTIES
 
@@ -356,7 +356,7 @@ if( Number != 10) // we check if the number is different of 10
 
   [Range(-2.0f, 2.0f)]
 ````
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ### METHODS
 
@@ -369,7 +369,7 @@ public override void Init()
 }CREATE A DEBUGGER
 ````
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ### SCRIPT STRUCTURE
 
@@ -439,7 +439,7 @@ namespace MyScripts
 }
 ```
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 # START TO PROGRAMMING 
 
@@ -449,7 +449,7 @@ To start we can see something before to start, when sansar is installed we can f
 
 You can make a copy of the `Folder`to create our WorkSpace where we will make our scripts.
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## IMPORT
 
@@ -511,7 +511,7 @@ If the `Code` does not present any problem this will be added to the `Inventory 
   title="InventoryWindows"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 
 ## ADD A SCRIPT TO AN OBJECT
@@ -533,7 +533,7 @@ When we are in the editor of sansar, we have different forms to add a script to 
 > `CASE D` in this case we  can add a script from the `Scene Objects`  panel 
 
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 
 ## FUNCTION LOG 
@@ -590,7 +590,7 @@ public class LogMessage : SceneObjectScript
 
 
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## TAG NAME
 If we want have a type of `Tag` in sansar we can use the property `Interaction`
@@ -620,7 +620,7 @@ public class TagName : SceneObjectScript
 }
 ````
 
-[` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+[` ▲ BACK TO TOP` ](#content-table)
 
 ## MESSAGES
 
@@ -790,7 +790,7 @@ public class ModalMessage : SceneObjectScript
 }
 ````
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## MY INTERACTION
 
@@ -832,7 +832,7 @@ public class HelloWorld : SceneObjectScript
 //Some parts of this code use content from the Sansar Knowledge Base. � 2022 Sansar, Inc. Licensed under the Creative Commons Attribution 4.0 International License (license summary available at https://creativecommons.org/licenses/by/4.0/ and complete license terms available at https://creativecommons.org/licenses/by/4.0/legalcode).
 ````
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 
 ## AMOUNT
@@ -916,7 +916,7 @@ public class NumberCounter : SceneObjectScript
 }
 ````
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## MOVE OBJECTS
 
@@ -1012,11 +1012,11 @@ OBJECT - MOVE SCRIPT
 > THIRD OPTION
 
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## ANIMATIONS
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## SOUNDS
 
@@ -1084,11 +1084,11 @@ But we can find another options belong to the Audios.
 - ` Size / Radius`   With this depending of the emitter let  change the structure of the object
 
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 ## MEDIA
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+ [` ▲ BACK TO TOP` ](#content-table)
 
 
 ## CALL CODE BY CLASSES
@@ -1152,7 +1152,7 @@ namespace MessagingScripts
 
 We can use the code above to create a lot of different scripts, where we want that one class call another one to generate an action when an event occurs 
 
-[` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+[` ▲ BACK TO TOP` ](#content-table)
 
 # SANSAR SCRIPT LIBRARY
 
@@ -1267,5 +1267,15 @@ We can see that most of the code have comments that explain what the code do in 
 
 
 
-[` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+[` ▲ BACK TO TOP` ](#content-table)
 
+
+
+### OTHER LINKS
+
+||Links|
+|-|-|
+|Sansar script guide|[EvoAv/ScriptGuide](https://github.com/darwinrecreant/sansar-scripting-guide)|
+|Sansar script guide|[MojoD/ScriptGuide](https://github.com/mojoD/sansar-script)|
+
+<em>*The references guides is not our authorship</em>
