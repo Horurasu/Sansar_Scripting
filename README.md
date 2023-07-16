@@ -44,6 +44,7 @@
 - 4.- [SANSAR SCRIPT LIBRARY](#SANSAR-SCRIPT-LIBRARY)
 
 
+
 ### OTHER LINKS
 
 ||Links|
@@ -949,7 +950,8 @@ to move the object in this case we have to consider the orientation of the `Axis
 
 We can see that we have 3 axis, we can move those positions and rotations as we want.
 
- `AXIS EDITOR`
+AXIS EDITOR
+
 - `RED` in the scene editor is the `X-Axis`
 - `GREEN` in the scene editor is the `Y-Axis`
 - `BLUE` in the scene editor is the `Z-Axis`
@@ -976,6 +978,7 @@ If we want to rotate the object we have to consider something similar because if
   alt="image"
   title="rotationset"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
+  
 
 > Rotation Offset in the script `X` moves the `Y` axis of the editor    
 
@@ -1264,5 +1267,5 @@ We can see that most of the code have comments that explain what the code do in 
 
 
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+[` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
