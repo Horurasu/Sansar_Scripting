@@ -42,7 +42,7 @@
   - 3.11.- [MEDIA](#media)
   - 3.12.- [CALL CODE BY CLASSES](#call-code-by-classes)
 - 4.- [SANSAR SCRIPT LIBRARY](#sansar-script-library)
-<details align="right">
+<details>
   <summary>SANSAR SCRIPT LIBRARY</summary>
 
 - [AdvancedCoroutineExample](#introduction)
