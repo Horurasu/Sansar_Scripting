@@ -1,4 +1,4 @@
-<h1 align="center"> SANSAR GUIDE  </h1> 
+<h1 align="center"> - SANSAR GUIDE - </h1> 
 
 <img
   src="/Images/SANSARLOGO.png"
@@ -1149,7 +1149,7 @@ namespace MessagingScripts
 
 We can use the code above to create a lot of different scripts, where we want that one class call another one to generate an action when an event occurs 
 
- [` ▲ BACK TO TOP` ](#CONTENT-TABLE)
+[` ▲ BACK TO TOP` ](#CONTENT-TABLE)
 
 # SANSAR SCRIPT LIBRARY
 
