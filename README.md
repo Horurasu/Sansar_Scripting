@@ -9,7 +9,7 @@
 
 ## CONTENT TABLE
 
-- 1.- [INTRODUCTION](#INTRODUCTION) 
+- 1.- [INTRODUCTION](#introduction) 
 	- 1.1.- [WHAT IS SANSAR](#WHAT-IS-SANSAR)
 	- 1.2.- [WHY PROGRAMMING IN C# LANGUAGE](#WHY-PROGRAMMING-IN-CSHARP-LANGUAGE)
 - 2.- [INTRODUCTION TO PROGRAMMING](#INTRODUCTION-TO-SANSAR-PROGRAMMING)
@@ -978,7 +978,7 @@ If we want to rotate the object we have to consider something similar because if
   alt="image"
   title="rotationset"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
-  
+
 
 > Rotation Offset in the script `X` moves the `Y` axis of the editor    
 
