@@ -1,4 +1,4 @@
-<h1 align="center"> - SANSAR GUIDE - </h1> 
+<h1 align="center">SANSAR GUIDE</h1> 
 
 <img
   src="/Images/SANSARLOGO.png"
